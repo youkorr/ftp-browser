@@ -1,0 +1,28 @@
+{
+      "name": "FTP Browser",
+      "version": "0.1.0",
+      "slug": "ftp_browser",
+      "description": "Un navigateur FTP pour Home Assistant",
+      "arch": ["amd64", "armv7", "aarch64"],
+      "startup": "application",
+      "boot": "auto",
+      "ports": {
+        "21/tcp": 21,
+        "80/tcp": 8080
+      },
+      "ports_description": {
+        "21/tcp": "FTP server",
+        "80/tcp": "Web interface"
+      },
+      "map": ["config:rw", "ssl", "addons:rw", "share:rw", "backup:rw"],
+      "options": {
+        "ftp_user": "hassio",
+        "ftp_password": "",
+        "ftp_directory": "/share"
+      },
+      "schema": {
+        "ftp_user": "str",
+        "ftp_password": "str",
+        "ftp_directory": "str"
+      }
+    }
