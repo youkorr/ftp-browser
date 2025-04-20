@@ -1,0 +1,13 @@
+#include <tunables/global>
+
+    profile ftp-browser flags=(attach_disconnected,mediate_deleted) {
+      #include <abstractions/base>
+      #include <abstractions/nameservice>
+
+      capability dac_override,
+      capability net_bind_service,
+
+      / r,
+      /** r,
+      /** w,
+    }
